@@ -27,9 +27,6 @@
             else 
             {
                 ?>
-                    <section class="left">
-                        <img src="img/arbre.png">
-                    </section>
                     <section class="mid cpageform">
                     <article class="titleform">
                     <p>Inscription</p>
@@ -84,9 +81,6 @@
                     }
                     ?>
                     </section>
-            <section class="right">
-                <img src="img/arbre.png">
-            </section>
             <?php
                 }
                 ?>
