@@ -257,6 +257,11 @@ main{
 .titleform {
     font-size: 28px;
 }
+
+.indexmid {
+    display: flex;
+    flex-direction: column;
+}
 .homecat{
     width: 100%;
     height: 50px;
@@ -274,18 +279,68 @@ main{
 }
 .homecat img{
     height: 40px;
-    width: 50px;
+    width: 40px;
+    margin-right: 20px;
 }
 .hometop{
    padding: 10px;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
 }
 .hometop a{
     text-decoration: none;
     font-size: 15px;
     color: black;
 }
-.hometop a:hover{
-    opacity: 0.4;
+
+.indexcase {
+    height: 80px;
+    background-color: #e3eeec;
+    border: 2px solid rgba(233,209,158,0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 18px;
+}
+
+.indexcasethread {
+    height: 80px;
+    background-color: #e3eeec;
+    border: 1px solid rgba(233,209,158,0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 18px;
+}
+
+.indexcasethread:hover{
+    background-color: rgba(233,209,158,0.6);
+    border: 1px solid #e3eeec;
+}
+
+.cmid a {
+    text-decoration: none;
+    color: black;
+}
+.indexcase:hover{
+    background-color: rgba(233,209,158,0.6);
+    border: 2px solid #e3eeec;
+}
+
+.messageder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.messageder p {
+    padding: 0;
+    margin: 0;
 }
 
 /* LISTE MEMBRES */
