@@ -21,10 +21,7 @@
             $query = mysqli_query($cnx, $requete);
             $resultat = mysqli_fetch_all($query, MYSQLI_ASSOC);
             $taille = count($resultat);
-<<<<<<< HEAD
             //var_dump($resultat);
-=======
->>>>>>> f4cea656401f5304e66163a8825705ee101d4e51
             $i = 0;
             $max = 0; 
             while ($i < $taille) { //boucle pour recuperer l'id max de categorie
@@ -42,11 +39,7 @@
                 if($idcat >= 0 && $idcat <= $max && !in_array($idcat, $iddone)){
             ?>
             <section class="homecat">
-<<<<<<< HEAD
             <img src="img/cat.png">    
-=======
-            <img src="img/cat<?php echo $idcat ?>.png">    
->>>>>>> f4cea656401f5304e66163a8825705ee101d4e51
             <?php
                 echo "<a href=\"topics.php?idcat=".$idcat."\">".$resultat[$a]['nomcat']."</a>";
             ?>
@@ -58,7 +51,6 @@
                 <?php 
                 while($b < $taille)
                 {
-<<<<<<< HEAD
                     if($resultat[$b]['id_categorie'] == $idcat && $resultat[$b]['visibilite'] == 1)
                     {
                         $idtopic = $resultat[$b]['idtopic'];
@@ -74,32 +66,6 @@
                        $idtopic = $resultat[$b]['idtopic'];
                        echo "- <a href=\"threads.php?idtopic=".$idtopic."\">".$resultat[$b]['nomtopic']."</a><br />";
                     }
-=======
-                        if($resultat[$b]['id_categorie'] == $idcat && $resultat[$b]['visibilite'] == 1)
-                        {
-                            $idtopic = $resultat[$b]['idtopic'];
-                            $requetethread = "SELECT (SELECT COUNT(*) FROM threads WHERE id_topic=$idtopic) as nbmessage, (SELECT nomthread FROM threads WHERE id_topic=$idtopic AND threads.id = (SELECT MAX(threads.id) FROM threads WHERE id_topic=$idtopic)) as titrederthread";
-                            $querythread = mysqli_query($cnx, $requetethread);
-                            $resultatthread = mysqli_fetch_all($querythread);
-                            echo "<a href=\"threads.php?idtopic=".$idtopic."\"><article class=\"indexcase\"><p>".$resultat[$b]['nomtopic']."</p><article class=\"messageder\"><p>Messages: ".$resultatthread[0][0]."</p><p>Dernier message: ".$resultatthread[0][1]."</p></article></article></a><br />";
-                        }
-                        if($resultat[$b]['id_categorie'] == $idcat && isset($_SESSION['login']) && $resultat[$b]['visibilite'] == 2) 
-                        {
-                            $idtopic = $resultat[$b]['idtopic'];
-                            $requetethread = "SELECT (SELECT COUNT(*) FROM threads WHERE id_topic=$idtopic) as nbmessage, (SELECT nomthread FROM threads WHERE id_topic=$idtopic AND threads.id = (SELECT MAX(threads.id) FROM threads WHERE id_topic=$idtopic)) as titrederthread";
-                            $querythread = mysqli_query($cnx, $requetethread);
-                            $resultatthread = mysqli_fetch_all($querythread);
-                            echo "<a href=\"threads.php?idtopic=".$idtopic."\"><article class=\"indexcase\"><p>".$resultat[$b]['nomtopic']."</p><article class=\"messageder\"><p>Messages: ".$resultatthread[0][0]."</p><p>Dernier message: ".$resultatthread[0][1]."</p></article></article></a><br />";
-                        }
-                        if($resultat[$b]['id_categorie'] == $idcat && isset($_SESSION['login']) && $_SESSION['rank'] == 1 && $resultat[$b]['visibilite'] == 3) 
-                        {
-                        $idtopic = $resultat[$b]['idtopic'];
-                        $requetethread = "SELECT (SELECT COUNT(*) FROM threads WHERE id_topic=$idtopic) as nbmessage, (SELECT nomthread FROM threads WHERE id_topic=$idtopic AND threads.id = (SELECT MAX(threads.id) FROM threads WHERE id_topic=$idtopic)) as titrederthread";
-                        $querythread = mysqli_query($cnx, $requetethread);
-                        $resultatthread = mysqli_fetch_all($querythread);
-                        echo "<a href=\"threads.php?idtopic=".$idtopic."\"><article class=\"indexcase\"><p>".$resultat[$b]['nomtopic']."</p><article class=\"messageder\"><p>Messages: ".$resultatthread[0][0]."</p><p>Dernier message: ".$resultatthread[0][1]."</p></article></article></a><br />";
-                        }
->>>>>>> f4cea656401f5304e66163a8825705ee101d4e51
                     $b++;
                 }
                 ?>
@@ -109,7 +75,6 @@
                 }
             $a++;
             }
-<<<<<<< HEAD
             if (isset($_SESSION["login"])) 
             {
                   echo "<br>Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez créer un <a href=\"newtopic.php\">TOPIC</a>.<br />";
@@ -117,8 +82,6 @@
             else{
             	  echo "<br>Bonjour Guest, Veuillez vous connecté afin de pouvoir créer un topic.<br />";
             }
-=======
->>>>>>> f4cea656401f5304e66163a8825705ee101d4e51
              if (isset($_GET["deco"]))
             {
             session_unset();
