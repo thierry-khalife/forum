@@ -58,7 +58,7 @@
                             $resultatthread = mysqli_fetch_all($querythread);
                             echo "<a href=\"threads.php?idtopic=".$idtopic."\"><article class=\"indexcase\"><p>".$resultat[$b]['nomtopic']."</p><article class=\"messageder\"><p>Messages: ".$resultatthread[0][0]."</p><p>Dernier message: ".$resultatthread[0][1]."</p></article></article></a><br />";
                         }
-                        if($resultat[$b]['id_categorie'] == $idcat && isset($_SESSION['login']) && $resultat[$b]['visibilite'] == 2) 
+                       if($resultat[$b]['id_categorie'] == $idcat && isset($_SESSION['login']) && $resultat[$b]['visibilite'] == 2 && ($_SESSION['rank'] == 1 || $_SESSION['rank'] == 2)) 
                         {
                             $idtopic = $resultat[$b]['idtopic'];
                             $requetethread = "SELECT (SELECT COUNT(*) FROM threads WHERE id_topic=$idtopic) as nbmessage, (SELECT nomthread FROM threads WHERE id_topic=$idtopic AND threads.id = (SELECT MAX(threads.id) FROM threads WHERE id_topic=$idtopic)) as titrederthread";
