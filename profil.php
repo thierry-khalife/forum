@@ -44,7 +44,11 @@ session_start();
                                 <label>Confirmation du mot de passe</label>
                                 <input type="password" name="passwordconf" />
                                 <input name="ID" type="hidden" value=<?php echo $resultat['id']; ?> />
+<<<<<<< HEAD
                                 <label>Image de profil:</label>
+=======
+                                <label>Image de profil</label>
+>>>>>>> f4cea656401f5304e66163a8825705ee101d4e51
                                 <input type="file" name="fileToUpload" id="fileToUpload">
                                 <input type="submit" name="modifier" value="Modifier" />
                             </section>

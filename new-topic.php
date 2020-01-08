@@ -28,9 +28,15 @@
                         <input type="text" name="topic" required>
                         <label>Catégorie</label>
                         <select name="categorie" required>
+<<<<<<< HEAD
                             <option value=1>Allolila</option>
                             <option value=2>League of Legends</option>
                             <option value=3>Rocket League</option>
+=======
+                            <option value=1>Annonces officielles</option>
+                            <option value=2>Communauté</option>
+                            <option value=3>Recrutement</option>
+>>>>>>> f4cea656401f5304e66163a8825705ee101d4e51
                         </select>
                         <br />
                         <input class="mybutton"  type="submit" value="Créer un topic" name="valider">
@@ -43,7 +49,11 @@
                           $rename = addslashes($nomtopic); 
                           $requete = "INSERT INTO topics (nomtopic, id_utilisateur, datecreation, id_categorie) VALUES ('$rename', ".$resultat2[0]['id'].", '".date("Y-m-d H:i:s")."', '$categorie')";
                           $query = mysqli_query($cnx, $requete);
+<<<<<<< HEAD
                           header('Location: topics.php');
+=======
+                          header("Location: topics.php?idcat=$categorie");
+>>>>>>> f4cea656401f5304e66163a8825705ee101d4e51
                     }
             } 
             else {

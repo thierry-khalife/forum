@@ -7,7 +7,10 @@ if ( isset($_GET["idthread"]) ) {
     $idthread = $_GET["idthread"];
     $intidthread = intval($idthread);
     $requete1 = "SELECT * FROM messages WHERE id_thread=$intidthread ORDER BY datemessage ASC";
+<<<<<<< HEAD
     echo $requete1;
+=======
+>>>>>>> f4cea656401f5304e66163a8825705ee101d4e51
     $query1 = mysqli_query($cnx, $requete1);
     $resultat = mysqli_fetch_all($query1, MYSQLI_ASSOC);
     $taille = sizeof($resultat) - 1;
@@ -52,7 +55,11 @@ if ( isset($_POST['envoyer']) == true && isset($_POST['message']) && strlen($_PO
 <body>
 <?php include("header.php"); ?>
     <main>
+<<<<<<< HEAD
          <section class="corpsmain">
+=======
+         <section class="cmid">
+>>>>>>> f4cea656401f5304e66163a8825705ee101d4e51
             <h1 class="h1topic">Discussion</h1>
             <?php
             $a = 0;
