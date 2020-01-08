@@ -96,7 +96,7 @@ if ( isset($_POST['envoyer']) == true && isset($_POST['message']) && strlen($_PO
                     </article>
                     <article>
                         <?php
-                        if(isset($_SESSION['login']) && $_SESSION['login'] == "admin")
+                        if(isset($_SESSION['login']) && ($_SESSION['rank'] == 1 || $_SESSION['rank'] == 2))
                         {
                             echo "<form method=\"post\" action=\"threads.php?idthread=$intidthread\">
                             <br><input type=\"submit\" class=\"submit2\"  name=\"delete".$a."\" value=\"$idcom\" />
