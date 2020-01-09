@@ -19,3 +19,5 @@ Admin & Mod
 Likes system : 
 
 All members 
+
+Creation Categories = ADMINISTRATEUR
