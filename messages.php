@@ -98,7 +98,7 @@ if ( isset($_POST['envoyer']) == true && isset($_POST['message']) && strlen($_PO
                         <?php
                         if(isset($_SESSION['login']) && ($_SESSION['rank'] == 1 || $_SESSION['rank'] == 2))
                         {
-                            echo "<form method=\"post\" action=\"threads.php?idthread=$intidthread\">
+                            echo "<form method=\"post\" action=\"messages.php?idthread=$intidthread\">
                             <br><input type=\"submit\" class=\"submit2\"  name=\"delete".$a."\" value=\"$idcom\" />
                             </form>";
                         }
