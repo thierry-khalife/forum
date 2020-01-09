@@ -1,5 +1,11 @@
-<?php session_start() ?>
+<?php session_start();
 
+if (isset($_GET["deco"]))
+{
+    session_unset();
+    session_destroy();
+}
+?>
 <!DOCTYPE html>
 
 <html>
@@ -15,6 +21,8 @@
     <main>
         <section class="cmid">
             <?php
+            
+
             date_default_timezone_set('Europe/Paris');
             $cnx = mysqli_connect("localhost", "root", "", "forum");
             $requete = "SELECT categories.nomcat,topics.id_utilisateur,nomtopic,topics.datecreation,id_categorie,visibilite,topics.id as idtopic FROM categories INNER JOIN topics ON categories.id = topics.id_categorie";
@@ -78,16 +86,10 @@
                 }
                 ?>
                 </section>
-                <?php 
-                array_push($iddone,$idcat);
-                }
-            $a++;
+            <?php 
+            array_push($iddone,$idcat);
             }
-             if (isset($_GET["deco"]))
-            {
-            session_unset();
-            session_destroy();
-            header('Location:index.php');
+            $a++;
             }
             ?>
         </section>

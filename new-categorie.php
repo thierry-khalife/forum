@@ -36,7 +36,7 @@
                           $renomcat = addslashes($nomcat); 
                           $requete = "INSERT INTO categories (nomcat, id_utilisateur) VALUES ('$renomcat', ".$resultat2[0]['id'].")";
                           $query = mysqli_query($cnx, $requete);
-                          header('Location: index.php');
+                          header('Location:index.php');
                     }
             } 
             else {
