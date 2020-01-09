@@ -39,7 +39,7 @@
             }
             if (isset($_SESSION["login"])) 
             {
-                  echo "<br>Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez créer un <a href=\"newtopic.php\">TOPIC</a>.<br />";
+                  echo "<br>Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez créer un <a href=\"new-topic.php\">TOPIC</a>.<br />";
             } 
             else{
             	  echo "<br>Bonjour Guest, Veuillez vous connecté afin de pouvoir créer un topic.<br />";
