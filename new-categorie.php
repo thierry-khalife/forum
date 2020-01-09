@@ -16,18 +16,18 @@
             <?php
             date_default_timezone_set('Europe/Paris');
             $cnx = mysqli_connect("localhost", "root", "", "forum");
-            if (isset($_SESSION["login"])) {
+            if (isset($_SESSION["login"]) && $_SESSION["rank"] == 1) {
                     $requete2 = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
                     $query2 = mysqli_query($cnx, $requete2);
                     $resultat2 = mysqli_fetch_all($query2, MYSQLI_ASSOC);
-                    echo "Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez créer un topic.<br />";
+                    echo "Bonjour, " . $_SESSION["login"] . " vous êtes connecté en tant qu'admin vous pouvez créer une nouvelle categorie.<br />";
             ?>
-                    <article><h1>Veuillez rentrer le nom du topic :</h1></article>
+                    <article><h1>Veuillez rentrer le nom de la categorie :</h1></article>
                     <form class="form_site" action="new-categorie.php" method="post">
                         <label>Nom de la catégorie</label>
                         <input type="text" name="nomcat" required>
                         <br />
-                        <input class="mybutton"  type="submit" value="Créer un topic" name="valider">
+                        <input class="mybutton"  type="submit" value="Créer une categorie" name="valider">
                     </form>
             <?php
                     if ( isset($_POST["valider"]) )
@@ -40,7 +40,7 @@
                     }
             } 
             else {
-                 echo "Bonjour, veuillez vous connecter afin de pouvoir créer un topic.<br />";
+                 echo "Bonjour, veuillez vous connecter en tant qu'administrateur afin de pouvoir créer une categorie.<br />";
                
             }
 
