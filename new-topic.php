@@ -20,6 +20,9 @@
                     $requete2 = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
                     $query2 = mysqli_query($cnx, $requete2);
                     $resultat2 = mysqli_fetch_all($query2, MYSQLI_ASSOC);
+                    $requetecat= "SELECT * FROM categories ORDER BY id ASC";
+                    $querycat = mysqli_query($cnx, $requetecat);
+                    $resultatcat = mysqli_fetch_all($querycat, MYSQLI_ASSOC);
                     echo "Bonjour, " . $_SESSION["login"] . " vous êtes connecté vous pouvez créer un topic.<br />";
             ?>
                     <article><h1>Veuillez rentrer le nom du topic :</h1></article>
@@ -28,9 +31,15 @@
                         <input type="text" name="topic" required>
                         <label>Catégorie</label>
                         <select name="categorie" required>
-                            <option value=1>Annonces officielles</option>
-                            <option value=2>Communauté</option>
-                            <option value=3>Recrutement</option>
+                        <?php 
+                        $i=0;
+                        $taille = count($resultatcat);
+                        while($i < $taille)
+                        {
+                           echo"<option value=".$i.">".$resultatcat[$i]["nomcat"]."</option>";
+                            $i++;
+                        } 
+                        ?>    
                         </select>
                         <br />
                         <input class="mybutton"  type="submit" value="Créer un topic" name="valider">
@@ -39,7 +48,7 @@
                     if ( isset($_POST["valider"]) )
                     {
                           $nomtopic = $_POST['topic'];
-                          $categorie = $_POST['categorie'];
+                          $categorie = $_POST['categorie'] + 1;
                           $rename = addslashes($nomtopic); 
                           $requete = "INSERT INTO topics (nomtopic, id_utilisateur, datecreation, id_categorie) VALUES ('$rename', ".$resultat2[0]['id'].", '".date("Y-m-d H:i:s")."', '$categorie')";
                           $query = mysqli_query($cnx, $requete);
