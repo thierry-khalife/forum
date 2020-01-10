@@ -155,7 +155,7 @@ session_start();
 <?php 
 
 include("footer.php"); 
-mysqli_close($cnx);
+mysqli_close($connexion);
 
 ?>
 </body>

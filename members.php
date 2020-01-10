@@ -100,9 +100,9 @@ else
         </section>
         </section>
     </main>
-    <?php include("footer.php"); ?>
+    <?php include("footer.php"); 
+          mysqli_close($connexion);
+    ?>
 </body>
 
 </html>
-<?php
-mysqli_close($connexion);
