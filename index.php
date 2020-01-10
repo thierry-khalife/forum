@@ -31,7 +31,7 @@ if (isset($_GET["deco"]))
             $taille = count($resultat);
             $i = 0;
             $max = 0; 
-            while ($i < $taille) { //boucle pour recuperer l'id max de categorie
+            while ($i < $taille) {  //boucle pour recuperer l'id max de categorie
             if($max < $resultat[$i]['id_categorie'])
               {
                 $max = $resultat[$i]['id_categorie'];
