@@ -27,3 +27,14 @@ Creation Categories = ADMINISTRATEUR
 Gestion de droit : 
 
 Admins can change user rank from the proper user.php
+
+
+compte test admin : 
+
+admin
+admin
+
+compte test mod : 
+
+pol
+pol
