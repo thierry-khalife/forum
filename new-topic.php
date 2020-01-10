@@ -42,6 +42,19 @@
                         ?>    
                         </select>
                         <br />
+                        <?php 
+                        if ($_SESSION["rank"] == 1 || $_SESSION["rank"] == 2)
+                        {
+                        ?>
+                        <select name="visibilite" required>
+                        <option value="1">Public</option>
+                        <option value="2">Logged members</option>
+                        <option value="3">Admins only</option>
+                        </select>
+                        <?php   
+                        } 
+                        ?>    
+                        <br />
                         <input class="mybutton"  type="submit" value="Créer un topic" name="valider">
                     </form>
             <?php
@@ -49,8 +62,9 @@
                     {
                           $nomtopic = $_POST['topic'];
                           $categorie = $_POST['categorie'] + 1;
+                          $visibilite = $_POST['visibilite'];
                           $rename = addslashes($nomtopic); 
-                          $requete = "INSERT INTO topics (nomtopic, id_utilisateur, datecreation, id_categorie) VALUES ('$rename', ".$resultat2[0]['id'].", '".date("Y-m-d H:i:s")."', '$categorie')";
+                          $requete = "INSERT INTO topics (nomtopic, id_utilisateur, datecreation, id_categorie, visibilite) VALUES ('$rename', ".$resultat2[0]['id'].", '".date("Y-m-d H:i:s")."', '$categorie', '$visibilite')";
                           $query = mysqli_query($cnx, $requete);
                           header("Location: topics.php?idcat=$categorie");
                     }
