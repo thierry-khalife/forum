@@ -16,7 +16,7 @@
             <?php
             date_default_timezone_set('Europe/Paris');
             $cnx = mysqli_connect("localhost", "root", "", "forum");
-            if (isset($_SESSION["login"])) {
+            if (isset($_SESSION["login"]) && ($_SESSION["rank"] == 1 || $_SESSION["rank"] == 2)) {
                     $requete2 = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
                     $query2 = mysqli_query($cnx, $requete2);
                     $resultat2 = mysqli_fetch_all($query2, MYSQLI_ASSOC);
@@ -42,18 +42,11 @@
                         ?>    
                         </select>
                         <br />
-                        <?php 
-                        if ($_SESSION["rank"] == 1 || $_SESSION["rank"] == 2)
-                        {
-                        ?>
                         <select name="visibilite" required>
                         <option value="1">Public</option>
                         <option value="2">Logged members</option>
                         <option value="3">Admins only</option>
-                        </select>
-                        <?php   
-                        } 
-                        ?>    
+                        </select> 
                         <br />
                         <input class="mybutton"  type="submit" value="Créer un topic" name="valider">
                     </form>
@@ -70,7 +63,7 @@
                     }
             } 
             else {
-                 echo "Bonjour, veuillez vous connecter afin de pouvoir créer un topic.<br />";
+                 echo "Bonjour, veuillez vous connecter  en tant qu'admin ou moderateur afin de pouvoir créer un topic.<br />";
                
             }
 
