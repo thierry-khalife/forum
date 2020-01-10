@@ -21,3 +21,7 @@ Likes system :
 All members 
 
 Creation Categories = ADMINISTRATEUR
+
+Gestion de droit : 
+
+Admins can change user rank from the proper user.php
