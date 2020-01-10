@@ -2,9 +2,9 @@
 
 Visibilité topics :
 
-1 public
-2 membres connectés
-3 privé admin
+1 public  (option dispo a la creation pour les membres)
+2 membres connectés (option dispo a la creation pour les membres)
+3 privé admin (option dispo a la creation pour les admins)
 
 Rank utilisateur : 
 
