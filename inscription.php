@@ -86,7 +86,12 @@
                 ?>
         </section>
     </main>
-<?php include("footer.php"); ?>
+<?php 
+
+include("footer.php"); 
+mysqli_close($cnx);
+
+?>
 </body>
 
 </html>
