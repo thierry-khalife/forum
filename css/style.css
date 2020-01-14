@@ -440,3 +440,219 @@ main{
 .listmembre a {
     text-decoration: none;
 }
+
+.cmessages {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.message {
+    font-family: Helvetica, sans-serif;
+    background-color: #b9c9ce;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.messageleft {
+    width: 22%;
+    min-width: 298px;
+    background-color: darkcyan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.avatarmsg {
+    height: 150px;
+    width: 150px;
+    border: 2px solid #927549;
+}
+
+.messageleft h2 {
+    margin: 10px 0 0 0;
+    font-weight: normal;
+    font-size: 22px;
+}
+
+.rank {
+    height: 80px;
+    width: 180px;
+    margin-top: 10px;
+}
+
+#formvote {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100px;
+    margin-top: 10px;
+}
+
+.likebtn {
+    background-color: #b9c9ce;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.deletebtn {
+    background-color: #b9c9ce;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.deletebtn form {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+#like {
+     font-size: 0;
+     width: 24px;
+     height: 24px;
+     border: none;
+     margin: 0;
+    padding: 0;
+    background: transparent;
+    background-image: url(../img/like.png);
+    opacity: 1;
+}
+
+#like:hover {
+    background-image: url(../img/like.png);
+    opacity: 0.7;
+}
+
+#dislike {
+     font-size: 0;
+     width: 24px;
+     height: 24px;
+     border: none;
+     margin: 0;
+    padding: 0;
+    background: transparent;
+    background-image: url(../img/dislike.png); 
+}
+
+#dislike:hover {
+    background-image: url(../img/dislike.png);
+    opacity: 0.7;
+}
+
+#likev {
+     font-size: 0;
+     width: 24px;
+     height: 24px;
+     border: none;
+     margin: 0;
+    padding: 0;
+    background: transparent;
+    background-image: url(../img/likev.png);
+    opacity: 1;
+}
+
+#likev:hover {
+    background-image: url(../img/likev.png);
+    opacity: 0.7;
+}
+
+#dislikev {
+     font-size: 0;
+     width: 24px;
+     height: 24px;
+     border: none;
+     margin: 0;
+    padding: 0;
+    background: transparent;
+    background-image: url(../img/dislikev.png); 
+}
+
+#dislikev:hover {
+    background-image: url(../img/dislikev.png);
+    opacity: 0.7;
+}
+
+.submitdel {
+	border:none;
+	background:transparent url('../img/delete.png');
+	background-size: cover;
+	background-repeat:no-repeat;
+    width: 30px; 
+	height: 30px;
+	font-size: 0px;
+    color: transparent;
+	cursor: pointer;
+}
+
+.form_site {
+    background-color: #d3c8b7;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_site label {
+    color: #927549;
+    font-size: 26px;
+    margin: 20px;
+}
+
+.form_site textarea {
+    height: 30vh;
+    width: 80%;
+}
+
+.form_site textarea:focus {
+    outline: none;
+}
+
+.form_site input[type="submit"] {
+    margin: 20px;
+    height: 60px;
+    width: 260px;
+    padding-left: 10px;
+    background: rgb(152,101,46);
+    background: linear-gradient(90deg, rgba(152,101,46,1) 0%, rgba(163,119,72,1) 25%, rgba(153,117,79,1) 50%, rgba(163,119,72,1) 75%, rgba(152,101,46,1) 100%);
+    color: white;
+    text-shadow: 0px 0px 10px rgba(195, 129, 0, 1);
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #d3c8b7;
+}
+
+.form_site input:focus[type="submit"] {
+    outline: none;
+}
+
+.form_site input:hover[type="submit"] {
+    background: rgb(143,90,34);
+    background: linear-gradient(90deg, rgba(143,90,34,1) 0%, rgba(163,111,55,1) 25%, rgba(163,119,72,1) 50%, rgba(163,111,55,1) 75%, rgba(143,90,34,1) 100%);
+    transform: scale(1.05);
+    transition: 0.25s;
+}
+
+.h1topic {
+    color: #927549;
+    font-size: 26px;
+    margin: 20px;
+    text-align: center;
+}
